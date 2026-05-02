@@ -3,97 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InfoQuim 8.º - Laboratorio Azul</title>
+    <title>InfoQuim 8.º - El Mundo Atómico</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header class="main-header">
-        <div class="logo">
-            <span class="lab-icon">🧪</span> InfoQuim 8.º
-        </div>
+        <div class="logo">🧪 InfoQuim 8.º</div>
         <nav class="top-nav">
-            <button class="nav-link active" onclick="showSection('inicio')">⚛️ Átomo</button>
-            <button class="nav-link" onclick="showSection('modelos')">🔭 Modelos</button>
-            <button class="nav-link" onclick="showSection('tabla')">📊 Tabla</button>
-            <button class="nav-link" onclick="showSection('enlaces')">🔗 Enlaces</button>
-            <button class="nav-link highlight" onclick="showSection('simulador')">Simulador Pro</button>
+            <button class="nav-link active" onclick="navegar(event, 'inicio')">⚛️ Átomo</button>
+            <button class="nav-link" onclick="navegar(event, 'modelos')">🔭 Modelos</button>
+            <button class="nav-link" onclick="navegar(event, 'tabla')">📊 Tabla</button>
+            <button class="nav-link" onclick="navegar(event, 'enlaces')">🔗 Enlaces</button>
+            <button class="nav-link highlight" onclick="navegar(event, 'simulador')">Simulador</button>
         </nav>
     </header>
 
-    <main>
-        <!-- SECCIÓN: INICIO / ÁTOMO -->
+    <main class="content-wrapper">
+        <!-- SECCIÓN INICIO -->
         <section id="inicio" class="tab-section active">
-            <div class="grid-overlay"></div>
-            <div class="hero-container">
+            <div class="hero-card">
                 <span class="badge">ESTRUCTURA DE LA MATERIA</span>
                 <h1>Arquitectos de la Materia</h1>
-                <p class="hero-text">
-                    Exploraremos los componentes fundamentales del universo y cómo se organizan para formar todo lo que conoces en el laboratorio.
-                </p>
-                <div class="info-card">
-                    <div class="card-icon">🔬</div>
-                    <div class="card-text">
-                        <small>EQUIPO DE INVESTIGACIÓN</small>
-                        <strong>Grado 8.º (Secundaria)</strong>
-                    </div>
+                <p>Explora cómo las partículas subatómicas forman la base de todo nuestro universo conocido[cite: 1].</p>
+                <div class="lab-status">
+                    <span>🔬 Grado: 8.º Secundaria</span>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN: MODELOS -->
+        <!-- SECCIÓN MODELOS -->
         <section id="modelos" class="tab-section">
-            <div class="container">
-                <h2 class="section-title">Línea del Tiempo Atómica</h2>
-                <div class="cards-grid">
-                    <article class="info-card-detail">
-                        <span class="icon">⚗️</span>
-                        <h3>Modelo de Dalton</h3>
-                        <p>La materia está formada por átomos indivisibles como esferas macizas.</p>
-                    </article>
-                    <article class="info-card-detail">
-                        <span class="icon">🧪</span>
-                        <h3>Modelo de Thomson</h3>
-                        <p>El "budín de pasas": electrones incrustados en una masa positiva.</p>
-                    </article>
-                    <article class="info-card-detail">
-                        <span class="icon">🔬</span>
-                        <h3>Modelo de Rutherford</h3>
-                        <p>Descubrimiento del núcleo atómico y el espacio vacío.</p>
-                    </article>
+            <h2>Evolución del Átomo</h2>
+            <div class="info-grid">
+                <div class="card">
+                    <h3>Modelo de Bohr</h3>
+                    <p>Los electrones giran en niveles de energía definidos alrededor del núcleo[cite: 1].</p>
+                </div>
+                <div class="card">
+                    <h3>Rutherford</h3>
+                    <p>El átomo tiene un núcleo central con carga positiva donde se concentra la masa[cite: 1].</p>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN: TABLA PERIÓDICA -->
+        <!-- SECCIÓN TABLA -->
         <section id="tabla" class="tab-section">
-            <div class="container">
-                <h2 class="section-title">Organización de los Elementos</h2>
-                <div class="placeholder-content">
-                    <p>Aquí se desplegará la Tabla Periódica Interactiva de 8.º grado.</p>
-                    <div class="tube-container">
-                        <div class="test-tube blue"></div>
-                        <div class="test-tube lightblue"></div>
-                    </div>
-                </div>
+            <h2>Tabla Periódica Moderna</h2>
+            <p>Los elementos se organizan por su número atómico y propiedades químicas similares[cite: 1].</p>
+            <div class="periodic-demo">
+                <div class="element">H</div>
+                <div class="element">He</div>
+                <div class="element">Li</div>
             </div>
         </section>
 
-        <!-- SECCIÓN: ENLACES -->
+        <!-- SECCIÓN ENLACES -->
         <section id="enlaces" class="tab-section">
-            <div class="container">
-                <h2 class="section-title">Fuerzas Interatómicas</h2>
-                <p>Estudio de enlaces iónicos, covalentes y metálicos.</p>
+            <h2>Enlaces Químicos</h2>
+            <div class="card">
+                <p><strong>Iónico:</strong> Se produce cuando un átomo cede electrones a otro[cite: 1].</p>
             </div>
         </section>
 
-        <!-- SECCIÓN: SIMULADOR -->
+        <!-- SECCIÓN SIMULADOR -->
         <section id="simulador" class="tab-section">
-            <div class="container">
-                <div class="simulator-box">
-                    <h3>Consola de Simulación Pro</h3>
-                    <div class="status-light"></div>
-                    <p>Iniciando entorno virtual de colisión de partículas...</p>
-                </div>
+            <h2>Laboratorio Virtual</h2>
+            <div class="sim-box">
+                <p>Presiona el botón para simular una mezcla:</p>
+                <button class="btn-lab" onclick="alert('Mezcla realizada con éxito')">Mezclar Reactivos</button>
             </div>
         </section>
     </main>
