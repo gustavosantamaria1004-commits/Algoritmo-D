@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoQuim 8.º - Laboratorio Azul</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <span class="lab-icon">🧪</span> InfoQuim 8.º
+        </div>
+        <nav class="top-nav">
+            <button class="nav-link active" onclick="showSection('inicio')">⚛️ Átomo</button>
+            <button class="nav-link" onclick="showSection('modelos')">🔭 Modelos</button>
+            <button class="nav-link" onclick="showSection('tabla')">📊 Tabla</button>
+            <button class="nav-link" onclick="showSection('enlaces')">🔗 Enlaces</button>
+            <button class="nav-link highlight" onclick="showSection('simulador')">Simulador Pro</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- SECCIÓN: INICIO / ÁTOMO -->
+        <section id="inicio" class="tab-section active">
+            <div class="grid-overlay"></div>
+            <div class="hero-container">
+                <span class="badge">ESTRUCTURA DE LA MATERIA</span>
+                <h1>Arquitectos de la Materia</h1>
+                <p class="hero-text">
+                    Exploraremos los componentes fundamentales del universo y cómo se organizan para formar todo lo que conoces en el laboratorio.
+                </p>
+                <div class="info-card">
+                    <div class="card-icon">🔬</div>
+                    <div class="card-text">
+                        <small>EQUIPO DE INVESTIGACIÓN</small>
+                        <strong>Grado 8.º (Secundaria)</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: MODELOS -->
+        <section id="modelos" class="tab-section">
+            <div class="container">
+                <h2 class="section-title">Línea del Tiempo Atómica</h2>
+                <div class="cards-grid">
+                    <article class="info-card-detail">
+                        <span class="icon">⚗️</span>
+                        <h3>Modelo de Dalton</h3>
+                        <p>La materia está formada por átomos indivisibles como esferas macizas.</p>
+                    </article>
+                    <article class="info-card-detail">
+                        <span class="icon">🧪</span>
+                        <h3>Modelo de Thomson</h3>
+                        <p>El "budín de pasas": electrones incrustados en una masa positiva.</p>
+                    </article>
+                    <article class="info-card-detail">
+                        <span class="icon">🔬</span>
+                        <h3>Modelo de Rutherford</h3>
+                        <p>Descubrimiento del núcleo atómico y el espacio vacío.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: TABLA PERIÓDICA -->
+        <section id="tabla" class="tab-section">
+            <div class="container">
+                <h2 class="section-title">Organización de los Elementos</h2>
+                <div class="placeholder-content">
+                    <p>Aquí se desplegará la Tabla Periódica Interactiva de 8.º grado.</p>
+                    <div class="tube-container">
+                        <div class="test-tube blue"></div>
+                        <div class="test-tube lightblue"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: ENLACES -->
+        <section id="enlaces" class="tab-section">
+            <div class="container">
+                <h2 class="section-title">Fuerzas Interatómicas</h2>
+                <p>Estudio de enlaces iónicos, covalentes y metálicos.</p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: SIMULADOR -->
+        <section id="simulador" class="tab-section">
+            <div class="container">
+                <div class="simulator-box">
+                    <h3>Consola de Simulación Pro</h3>
+                    <div class="status-light"></div>
+                    <p>Iniciando entorno virtual de colisión de partículas...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
