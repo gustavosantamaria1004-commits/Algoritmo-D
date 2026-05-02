@@ -4,9 +4,124 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InfoQuim 8.º - El Mundo Atómico</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* CSS: DISEÑO PROFESIONAL EN AZUL Y BLANCO */
+        :root {
+            --primary-blue: #0056b3;
+            --light-blue: #e7f1ff;
+            --text-dark: #212529;
+            --white: #ffffff;
+            --gray-bg: #f8f9fa;
+            --accent-cyan: #0dcaf0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--gray-bg);
+            color: var(--text-dark);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* HEADER E INSTRUCCIONES VISUALES */
+        .main-header {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo { font-size: 1.5rem; font-weight: bold; }
+
+        .top-nav button {
+            background: none;
+            border: none;
+            color: rgba(255,255,255,0.8);
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        .top-nav button.active {
+            color: var(--white);
+            border-bottom: 3px solid var(--accent-cyan);
+            font-weight: bold;
+        }
+
+        /* CONTENEDOR PRINCIPAL */
+        .content-wrapper {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        /* LÓGICA DE PESTAÑAS (OCULTAR/MOSTRAR) */
+        .tab-section {
+            display: none; 
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-section.active { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ESTILOS DE CONTENIDO */
+        h1, h2 { color: var(--primary-blue); }
+        .badge {
+            background: var(--light-blue);
+            color: var(--primary-blue);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .info-card {
+            border-left: 5px solid var(--primary-blue);
+            background: var(--gray-bg);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* TABLA PERIÓDICA MINI */
+        .periodic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .element {
+            background: var(--primary-blue);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .element span { display: block; font-size: 0.7rem; font-weight: normal; }
+
+        .lab-icon { font-size: 3rem; text-align: center; display: block; margin: 20px 0; }
+    </style>
 </head>
 <body>
+
     <header class="main-header">
         <div class="logo">🧪 InfoQuim 8.º</div>
         <nav class="top-nav">
@@ -14,67 +129,96 @@
             <button class="nav-link" onclick="navegar(event, 'modelos')">🔭 Modelos</button>
             <button class="nav-link" onclick="navegar(event, 'tabla')">📊 Tabla</button>
             <button class="nav-link" onclick="navegar(event, 'enlaces')">🔗 Enlaces</button>
-            <button class="nav-link highlight" onclick="navegar(event, 'simulador')">Simulador</button>
         </nav>
     </header>
 
     <main class="content-wrapper">
-        <!-- SECCIÓN INICIO -->
+
+        <!-- SECCIÓN: EL ÁTOMO -->
         <section id="inicio" class="tab-section active">
-            <div class="hero-card">
-                <span class="badge">ESTRUCTURA DE LA MATERIA</span>
-                <h1>Arquitectos de la Materia</h1>
-                <p>Explora cómo las partículas subatómicas forman la base de todo nuestro universo conocido[cite: 1].</p>
-                <div class="lab-status">
-                    <span>🔬 Grado: 8.º Secundaria</span>
-                </div>
+            <span class="badge">CONCEPTOS BÁSICOS</span>
+            <h1>La Unidad de la Materia</h1>
+            <p>El átomo es la unidad más pequeña de la materia que conserva las propiedades de un elemento químico[cite: 1].</p>
+            <div class="info-card">
+                <h3>Partículas Subatómicas:</h3>
+                <ul>
+                    <li><strong>Protones:</strong> Carga positiva (+), se encuentran en el núcleo[cite: 1].</li>
+                    <li><strong>Neutrones:</strong> Sin carga, se encuentran en el núcleo[cite: 1].</li>
+                    <li><strong>Electrones:</strong> Carga negativa (-), orbitan alrededor del núcleo[cite: 1].</li>
+                </ul>
             </div>
+            <span class="lab-icon">⚗️</span>
         </section>
 
-        <!-- SECCIÓN MODELOS -->
+        <!-- SECCIÓN: MODELOS ATÓMICOS -->
         <section id="modelos" class="tab-section">
-            <h2>Evolución del Átomo</h2>
-            <div class="info-grid">
-                <div class="card">
-                    <h3>Modelo de Bohr</h3>
-                    <p>Los electrones giran en niveles de energía definidos alrededor del núcleo[cite: 1].</p>
-                </div>
-                <div class="card">
-                    <h3>Rutherford</h3>
-                    <p>El átomo tiene un núcleo central con carga positiva donde se concentra la masa[cite: 1].</p>
-                </div>
+            <h1>Modelos Atómicos</h1>
+            <p>A lo largo de la historia, nuestra comprensión del átomo ha evolucionado[cite: 1]:</p>
+            
+            <div class="info-card">
+                <h3>Modelo de Rutherford (1911)</h3>
+                <p>Propuso que el átomo tiene un núcleo denso y positivo, con electrones girando a su alrededor como planetas[cite: 1].</p>
             </div>
+
+            <div class="info-card">
+                <h3>Modelo de Bohr (1913)</h3>
+                <p>Estableció que los electrones solo pueden girar en órbitas o niveles de energía específicos[cite: 1].</p>
+            </div>
+            <span class="lab-icon">🔬</span>
         </section>
 
-        <!-- SECCIÓN TABLA -->
+        <!-- SECCIÓN: TABLA PERIÓDICA -->
         <section id="tabla" class="tab-section">
-            <h2>Tabla Periódica Moderna</h2>
-            <p>Los elementos se organizan por su número atómico y propiedades químicas similares[cite: 1].</p>
-            <div class="periodic-demo">
-                <div class="element">H</div>
-                <div class="element">He</div>
-                <div class="element">Li</div>
+            <h1>Tabla Periódica</h1>
+            <p>Los elementos están organizados por su <strong>Número Atómico (Z)</strong>, que representa la cantidad de protones[cite: 1].</p>
+            
+            <div class="periodic-grid">
+                <div class="element">H<span>Hidrógeno (1)</span></div>
+                <div class="element">He<span>Helio (2)</span></div>
+                <div class="element">Li<span>Litio (3)</span></div>
+                <div class="element">Be<span>Berilio (4)</span></div>
+                <div class="element">B<span>Boro (5)</span></div>
+                <div class="element">C<span>Carbono (6)</span></div>
             </div>
+            <p style="margin-top:20px; font-style:italic;">*Tip: Los elementos de una misma columna (grupo) tienen propiedades químicas similares[cite: 1].</p>
         </section>
 
-        <!-- SECCIÓN ENLACES -->
+        <!-- SECCIÓN: ENLACES -->
         <section id="enlaces" class="tab-section">
-            <h2>Enlaces Químicos</h2>
-            <div class="card">
-                <p><strong>Iónico:</strong> Se produce cuando un átomo cede electrones a otro[cite: 1].</p>
+            <h1>Enlaces Químicos</h1>
+            <p>Los átomos se unen para alcanzar estabilidad, generalmente completando 8 electrones en su último nivel[cite: 1].</p>
+            
+            <div class="info-card">
+                <h3>Enlace Iónico</h3>
+                <p>Ocurre cuando un átomo cede electrones a otro (típico entre Metales y No Metales)[cite: 1].</p>
             </div>
+
+            <div class="info-card">
+                <h3>Enlace Covalente</h3>
+                <p>Los átomos comparten electrones para estar estables (típico entre No Metales)[cite: 1].</p>
+            </div>
+            <span class="lab-icon">🔗</span>
         </section>
 
-        <!-- SECCIÓN SIMULADOR -->
-        <section id="simulador" class="tab-section">
-            <h2>Laboratorio Virtual</h2>
-            <div class="sim-box">
-                <p>Presiona el botón para simular una mezcla:</p>
-                <button class="btn-lab" onclick="alert('Mezcla realizada con éxito')">Mezclar Reactivos</button>
-            </div>
-        </section>
     </main>
 
-    <script src="script.js"></script>
+    <script>
+        /* JS: LÓGICA DE NAVEGACIÓN */
+        function navegar(event, idSeccion) {
+            // 1. Ocultar todas las secciones
+            const secciones = document.querySelectorAll('.tab-section');
+            secciones.forEach(sec => sec.classList.remove('active'));
+
+            // 2. Quitar estado activo de los botones
+            const botones = document.querySelectorAll('.nav-link');
+            botones.forEach(btn => btn.classList.remove('active'));
+
+            // 3. Mostrar la sección seleccionada
+            document.getElementById(idSeccion).classList.add('active');
+
+            // 4. Activar el botón presionado
+            event.currentTarget.classList.add('active');
+        }
+    </script>
 </body>
 </html>
